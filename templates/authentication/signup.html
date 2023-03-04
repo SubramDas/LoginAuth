@@ -1,0 +1,40 @@
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP</title>
+</head>
+<body>
+    <h1>SIGNUP</h1>
+    <form action="/signup" method="post">
+    {% csrf_token %}
+        <label for="">UserName</label>
+        <input type="text" id="username" name="username" placeholder="Create a UserName" required> <br>
+        <label for="">First Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter your First Name" required> <br>
+        <label for="">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter your Last Name" required> <br>
+        <label for="">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your Email" required> <br>
+        <label for="">Password</label>
+        <input type="text" id="pass1" name="pass1" placeholder="Enter your Password" required> <br>
+        <label for="">Confirm Password</label>
+        <input type="password" id="pass2" name="pass2" placeholder="Confirm your password" required> <br>
+        
+        <button type="submit">Sign Up</button>
+        <button class="btn btn-outline-info">
+            <a href="{% provider_login_url 'google' %}">
+                <i class="fab fa-google"></i>
+                LOGIN WITH GOOGLE
+            </a>
+        </button>
+    </form>
+    
+</body>
+</html>
+
+<!-- client-id: 813564733276-555p8lups66ic0g0gitftphh4l0mn3e3.apps.googleusercontent.com
+client-secret: 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 -->
